@@ -1,0 +1,138 @@
+:root{
+    --ModerateViolet: hsl(263, 55%, 52%);
+    --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --VeryDarkBlackishBlue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    /* for text colors  */
+    --LightGray: hsl(0, 0%, 81%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Barlow Semi Condensed", sans-serif;
+}
+h1 , h2{
+    font-size: 13px;
+}
+body{
+    font-size: 13px;
+    height: 100vh;
+    background-color: var(--LightGrayishBlue);
+}
+/* here is my box cards  */
+.container{
+    padding: 50px ;
+    margin-left:50px ;
+    margin-right: 50px;
+    display: grid;
+    grid-template-areas:  
+    "daniel daniel jonathan kira"
+    "jeanette patrick patrick kira"
+    ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+.cards{
+    padding: 30px;
+    border-radius: 8px;
+    color: var(--LightGrayishBlue);
+    word-spacing: 2px;
+    background-color: var(--White);
+}
+.cards .tex{
+    line-height: 1.5;
+}
+
+.cards .tex .experienc{
+    font-size: 19px;
+    font-weight: 600;
+    padding: 20px 0 20px;
+}
+.cards .tex .comment{
+    opacity: 70%;
+}
+.card-3 .tex ,
+.card-5 .tex {
+    color: var(--VeryDarkGrayishBlue);
+}
+.card-3 .tex .comment ,
+.card-5 .tex .comment{
+    opacity: 70%;
+}
+/* here is .card-1 */
+.container .card-1{
+    grid-area: daniel;
+    background-color: var(--ModerateViolet);
+    z-index: 1;
+}
+
+.container .card-1 svg{
+    position: absolute;
+    top: 100px;
+    left: 500px;
+    z-index: -1;
+}
+
+/* here is .card-2 */
+.container .card-2{
+    grid-area: jonathan;
+    background-color: var(--VeryDarkGrayishBlue);
+    
+}
+
+/* here is .card-3 */
+.container .card-3{
+    grid-area: jeanette;
+    
+}
+
+/* here is .card-4 */
+.container .card-4{
+    background-color: var(--VeryDarkBlackishBlue);
+    grid-area: patrick;
+}
+
+/* here is .card-5 */
+.container .card-5{
+    grid-area:  kira;
+}
+/* here is text changes */
+.cards .info {
+    color: var(--LightGray);
+    display: flex;
+    text-align: left;
+}
+.cards .info .person {
+    padding-left: 20px;
+}
+.cards .info .person .grad{
+    opacity: 0.5;
+}
+.cards .info img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: solid 2px var(--White);
+}
+@media (max-width:786px) {
+    .container{
+        grid-template-columns:1fr;
+        margin: 80px 0 80px 0;
+        padding: 10px;
+        grid-template-areas:
+        "daniel"
+        "jonathan"
+        "kira"
+        "jeanette"
+        "patrick"
+        ;    
+    }
+    .container .card-1 svg{
+        left: 250px;
+        top: 100px;
+
+    }
+}
